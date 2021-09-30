@@ -13,7 +13,6 @@ For now, input/output via console,
 	-choose from available currencies (auto-conversion of interests/fees).
 2. Deposit Funds. 
 3. Withdraw Funds.
-	-(sufficient fund-check: amount + fee) 
 4. Show Account overview.
 5. Quit.
 
