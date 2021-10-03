@@ -5,7 +5,6 @@ import bankaccount.domain.*;
 import java.util.Scanner;
 
 public class AccountDriver {
-    //init setup:
     private final Scanner keyboardIn = new Scanner(System.in);
     private final String userName;
     protected final Account[] accounts = new Account[50];

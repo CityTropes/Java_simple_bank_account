@@ -1,6 +1,6 @@
 Java bank account
 
-Basic java bank account. Practicing abstraction, extending, constructors, arrays, access and more.
+Basic java bank account. Practicing abstraction, extending, constructors, immutable objects, access and more.
 Content: abstract class Account with extending Checking-,SavingsAccount classes.
   AccountDriver, Currency, Menu, Money class and currency converter.
 Main: starts AccountDriver with username 'testName'.
@@ -19,3 +19,4 @@ For now, input/output via console,
 
 todo: save & load (SQL or .json)
 todo: transfer money, auto-assign unique ID per account
+

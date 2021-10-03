@@ -9,7 +9,7 @@ public abstract class Account {
     private final String accountOwner;
     private final int accountNumber;
     protected Money balance;
-    //private char accountType; (checking/saving/Crypto)
+    //private char accountType; (checking/saving)
 
     public Account(String accountOwner, int accountNumber, Currency currency) {
         this.accountOwner = accountOwner;

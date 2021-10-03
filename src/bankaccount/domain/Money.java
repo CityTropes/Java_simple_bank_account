@@ -104,3 +104,11 @@ public final class Money {
     }
 
 }
+
+        /*
+        int five = 5;
+        Integer five = new Integer(5);
+
+        int sum = five + 5;
+        Integer sum = new Integer(five + 5);
+        */
