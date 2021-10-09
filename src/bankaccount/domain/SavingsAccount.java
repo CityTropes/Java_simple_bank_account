@@ -18,6 +18,7 @@ public class SavingsAccount extends Account {
         return this.interestRate;
     }
 
+    @Override
     public void deposit(Money amount) {
         if (amount.isNotZero()) {
             balance = balance.add(amount);
@@ -28,6 +29,7 @@ public class SavingsAccount extends Account {
         }
     }
 
+    @Override
     public void withdraw(Money amount) {
         if (amount.isNotZero()) {
             if (amount.lessThanOrEqual(balance)) {

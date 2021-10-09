@@ -109,7 +109,7 @@ public class AccountDriver {
 
         if (index >= 0) {
             System.out.print("Enter Deposit Amount: ");
-            Money amount = Money.fromBase(keyboardIn.nextDouble(), accounts[index].getCurrency());
+            Money amount = Money.createFromBase(keyboardIn.nextDouble(), accounts[index].getCurrency());
             accounts[index].deposit(amount);
         } else {
             System.out.print("No account exists with AccountNumber: " + accountNumber);
@@ -127,7 +127,7 @@ public class AccountDriver {
         if (index >= 0) {
             //amount
             System.out.print("Enter Withdraw Amount: ");
-            Money amount = Money.fromBase(keyboardIn.nextDouble(), accounts[index].getCurrency());
+            Money amount = Money.createFromBase(keyboardIn.nextDouble(), accounts[index].getCurrency());
             accounts[index].withdraw(amount);
         } else {
             System.out.print("No account exists with AccountNumber: " + accountNumber);
@@ -147,7 +147,7 @@ public class AccountDriver {
         if (accounts[index] instanceof SavingsAccount) {
             interest = ((SavingsAccount) accounts[index]).getInterestRate();
         }
-        Money transactionFee = Money.fromCent(0, currency);
+        Money transactionFee = Money.createFromCent(0, currency);
         if (accounts[index] instanceof CheckingAccount) {
             transactionFee = ((CheckingAccount) accounts[index]).getTransactionFee();
         }
@@ -173,8 +173,8 @@ public class AccountDriver {
 
         accounts[numAccounts++] = new CheckingAccount(userName, 1, Currency.USD);
         int index = searchAccount(accounts, numAccounts, 1);
-        accounts[index].deposit(Money.fromBase(70000, Currency.USD));
-        accounts[index].withdraw(Money.fromBase(10000, Currency.USD));
+        accounts[index].deposit(Money.createFromBase(70000, Currency.USD));
+        accounts[index].withdraw(Money.createFromBase(10000, Currency.USD));
         Currency currency = accounts[index].getCurrency();
         String curr = currency.toString();
         System.out.println("\nOverview account number " + accounts[index].getAccountNumber() + ":");
@@ -182,7 +182,7 @@ public class AccountDriver {
 
         accounts[numAccounts++] = new CheckingAccount(userName, 2, Currency.GBP);
         index = searchAccount(accounts, numAccounts, 2);
-        accounts[index].deposit(Money.fromBase(5000, Currency.GBP));
+        accounts[index].deposit(Money.createFromBase(5000, Currency.GBP));
         currency = accounts[index].getCurrency();
         curr = currency.toString();
         System.out.println("\nOverview account number " + accounts[index].getAccountNumber() + ":");
@@ -190,7 +190,7 @@ public class AccountDriver {
 
         accounts[numAccounts++] = new SavingsAccount(userName, 3, Currency.EUR);
         index = searchAccount(accounts, numAccounts, 3);
-        accounts[index].deposit(Money.fromBase(80000, Currency.EUR));
+        accounts[index].deposit(Money.createFromBase(80000, Currency.EUR));
         currency = accounts[index].getCurrency();
         curr = currency.toString();
         System.out.println("\nOverview account number " + accounts[index].getAccountNumber() + ":");

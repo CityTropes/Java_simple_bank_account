@@ -3,7 +3,7 @@ package bankaccount.domain;
 
 public class CheckingAccount extends Account {
 
-    private Money transactionFee = Money.fromCent(50, Currency.EUR);
+    private Money transactionFee = Money.createFromCent(50, Currency.EUR);
 
     public CheckingAccount(String accountOwner, int accountNumber, Currency currency, Money transactionFee) {
         super(accountOwner, accountNumber, currency);
@@ -20,6 +20,7 @@ public class CheckingAccount extends Account {
         return this.transactionFee;
     }
 
+    @Override
     public void deposit(Money amount) {
         if (amount.isNotZero()) {
             balance = balance.add(amount).sub(transactionFee);
@@ -31,6 +32,7 @@ public class CheckingAccount extends Account {
         }
     }
 
+    @Override
     public void withdraw(Money amount) {
         if (amount.isNotZero()) {
             Money withdrawWithAddedFee = amount.add(transactionFee);

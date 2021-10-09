@@ -25,7 +25,7 @@ public final class CurrencyConverter {
         double conversionRate = conversions.get(targetCurrency) / conversions.get(money.getCurrency());
         int cent = (int) Math.floor(money.getCent() * conversionRate);
 
-        return Money.fromCent(cent, targetCurrency);
+        return Money.createFromCent(cent, targetCurrency);
     }
 
 }

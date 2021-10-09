@@ -10,16 +10,19 @@ public final class Money {
 
 
 
-    public static Money fromCent(int value, Currency currency) {
+    // Factory method pattern: (method that creates instances)
+
+    public static Money createFromCent(int value, Currency currency) {
         return new Money(value, currency);
     }
 
-    public static Money fromBase(double value, Currency currency) {
+    public static Money createFromBase(double value, Currency currency) {
         return new Money((int) Math.floor(value * 100), currency);
     }
 
 
 
+    // Constructor is private, so you force to use the static factory methods.
     private Money(int value, Currency currency) {
         if (value < 0) {
             throw new IllegalArgumentException("Money cannot be below zero.");

@@ -1,6 +1,13 @@
+import bankaccount.domain.Account;
 import bankaccount.domain.Currency;
 import bankaccount.domain.Money;
+import bankaccount.domain.SavingsAccount;
+import bankaccount.domain.repository.AccountRepository;
+import bankaccount.domain.repository.MemoryAccountRepository;
 import bankaccount.ui.AccountDriver;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
@@ -8,8 +15,21 @@ public class Main {
 
         //TestAddingMoney();
 
+        AccountRepository accountRepo = new MemoryAccountRepository();
+
+        accountRepo.save(new SavingsAccount("Jan", 666, Currency.EUR));
+        accountRepo.save(new SavingsAccount("Tijs", 667, Currency.EUR));
+
+
+        
+
+        boolean success;
+
+
+
+
         AccountDriver accountDriver = new AccountDriver("testName");
-        accountDriver.mainMenu();
+        //accountDriver.mainMenu();
 
         //Money moneyToDeposit = Money.fromBase(20, checkingAccount.getCurrency());
         //checkingAccount.deposit(moneyToDeposit);
@@ -18,8 +38,8 @@ public class Main {
 
     public static void TestAddingMoney() {
 
-        Money nenEuro = Money.fromCent(100, Currency.EUR);
-        Money aDollar = Money.fromCent(100, Currency.USD);
+        Money nenEuro = Money.createFromCent(100, Currency.EUR);
+        Money aDollar = Money.createFromCent(100, Currency.USD);
 
         Money sum = null;
         try {

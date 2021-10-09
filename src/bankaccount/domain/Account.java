@@ -1,7 +1,6 @@
 package bankaccount.domain;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public abstract class Account {
 
@@ -14,7 +13,7 @@ public abstract class Account {
     public Account(String accountOwner, int accountNumber, Currency currency) {
         this.accountOwner = accountOwner;
         this.accountNumber = accountNumber;
-        balance = Money.fromCent(0, currency);
+        balance = Money.createFromCent(0, currency);
         creationTime = LocalDateTime.now();
     }
 
