@@ -6,9 +6,6 @@ import bankaccount.domain.repository.AccountRepository;
 import bankaccount.domain.repository.MemoryAccountRepository;
 import bankaccount.ui.AccountDriver;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -20,16 +17,10 @@ public class Main {
         accountRepo.save(new SavingsAccount("Jan", 666, Currency.EUR));
         accountRepo.save(new SavingsAccount("Tijs", 667, Currency.EUR));
 
-
-        
-
         boolean success;
 
-
-
-
         AccountDriver accountDriver = new AccountDriver("testName");
-        //accountDriver.mainMenu();
+        accountDriver.mainMenu();
 
         //Money moneyToDeposit = Money.fromBase(20, checkingAccount.getCurrency());
         //checkingAccount.deposit(moneyToDeposit);

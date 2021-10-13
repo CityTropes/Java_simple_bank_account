@@ -8,10 +8,7 @@ public final class Money {
     private final int cent;
     private final Currency currency;
 
-
-
-    // Factory method pattern: (method that creates instances)
-
+    // Factory method pattern (that creates instances)
     public static Money createFromCent(int value, Currency currency) {
         return new Money(value, currency);
     }
@@ -20,22 +17,13 @@ public final class Money {
         return new Money((int) Math.floor(value * 100), currency);
     }
 
-
-
-    // Constructor is private, so you force to use the static factory methods.
+    // Constructor is private, so you're forced to use the static factory methods.
     private Money(int value, Currency currency) {
         if (value < 0) {
             throw new IllegalArgumentException("Money cannot be below zero.");
         }
         this.cent = value;
         this.currency = currency;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return String.format("%.2f %s", getBase(), currency);
     }
 
 
@@ -60,13 +48,10 @@ public final class Money {
         return other.currency == currency;
     }
 
-
-
     public Money add(Money money) {
         assertSameCurrency(money);
         return new Money(cent + money.cent, currency);
     }
-
 
     public Money sub(Money money) {
         assertSameCurrency(money);
@@ -76,8 +61,6 @@ public final class Money {
     public Money multiply(double multiplier) {
         return new Money((int) Math.floor(cent * multiplier), currency);
     }
-
-
 
     public boolean greaterThan(Money other) { // gt()
         assertSameCurrency(other);
@@ -99,11 +82,16 @@ public final class Money {
         return cent <= other.cent;
     }
 
-
     private void assertSameCurrency(Money other) {
         if (other.currency != currency) {
             throw new IllegalArgumentException("Can only add in same currency (" + currency + " and " + other.currency + ")");
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format("%.2f %s", getBase(), currency);
     }
 
 }

@@ -6,7 +6,7 @@ public class SavingsAccount extends Account {
 
     public SavingsAccount(String accountOwner, int accountNumber, Currency currency) {
         super(accountOwner, accountNumber, currency);
-        System.out.println("\nConstructing CheckingAccount... Done.");
+        System.out.println("\n(test)Constructing CheckingAccount... Done.");
     }
 
     public SavingsAccount(String accountOwner, int accountNumber, Currency currency, double interestRate) {

@@ -38,7 +38,6 @@ public abstract class Account {
     }
 
 
-
     public void transfer(Account target, Money amount) {
         withdraw(amount);
         target.deposit(amount);

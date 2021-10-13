@@ -4,8 +4,7 @@ package bankaccount.domain;
 public enum Currency {
     EUR,
     USD,
-    GBP,
-    BTC;
+    GBP;
 
     public static boolean isValid(String curr) {
         for (Currency currency : Currency.values()) {

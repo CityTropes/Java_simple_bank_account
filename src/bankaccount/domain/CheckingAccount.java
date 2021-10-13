@@ -13,7 +13,7 @@ public class CheckingAccount extends Account {
     public CheckingAccount(String accountOwner, int accountNumber, Currency currency) {
         super(accountOwner, accountNumber, currency);
         this.transactionFee = CurrencyConverter.convert(transactionFee, currency);
-        System.out.println("\nConstructing CheckingAccount... Done.");
+        System.out.println("\n(test)Constructing CheckingAccount... Done.");
     }
 
     public Money getTransactionFee() {
@@ -28,7 +28,7 @@ public class CheckingAccount extends Account {
             System.out.printf("Transaction fee %s Applied%n", transactionFee);
             System.out.printf("Current Balance is: %s%n", balance);
         } else {
-            System.out.println("Not possible to deposit a negative amount.");
+            System.out.println("Not possible to deposit a negative amount.");       //already checked?
         }
     }
 
