@@ -1,7 +1,7 @@
 Java bank account
 UNDER CONTRUCTION
 
-Basic java bank account. Practicing abstraction, extending, constructors, immutable objects, access and more.
+Basic java bank account. Practicing interfaces, abstraction, immutable objects, repository and more.
 Content: abstract class Account with extending Checking-,SavingsAccount classes.
   AccountDriver, Currency, Menu, Money class and currency converter.
 Main: starts AccountDriver with username 'testName'.
